@@ -1,0 +1,5 @@
+project: tarea03-autoencoder
+entity: null            # nombre del team de WandB (null = cuenta personal)
+group: ${model.name}
+name: ${model.name}-${loss}
+mode: online            # offline para probar sin internet

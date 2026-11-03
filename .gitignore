@@ -1,0 +1,5 @@
+multirun/
+outputs/
+wandb/
+__pycache__/
+*.ckpt

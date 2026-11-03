@@ -1,0 +1,8 @@
+# Carpeta raíz de MVTec AD (debe contener cable/, capsule/, screw/, transistor/)
+root: /content/drive/MyDrive/mvtec_ad
+categories: [cable, capsule, screw, transistor]
+image_size: 128
+batch_size: 32
+val_split: 0.15
+num_workers: 2
+seed: ${seed}

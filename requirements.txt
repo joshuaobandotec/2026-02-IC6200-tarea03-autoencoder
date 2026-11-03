@@ -1,0 +1,8 @@
+lightning>=2.2
+hydra-core>=1.3
+wandb
+torchmetrics
+scikit-learn
+matplotlib
+pandas
+pillow

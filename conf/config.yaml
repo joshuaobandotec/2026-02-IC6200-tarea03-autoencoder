@@ -1,0 +1,27 @@
+# Configuración principal. Cambiar desde la línea de comandos, por ejemplo:
+#   python train.py model=vae loss=ssim_l1
+#   python train.py -m model=u-net loss=l1,l2,ssim,ssim_l1
+defaults:
+  - model: vae          # vae | u-net
+  - trainer: default
+  - logger: wandb
+  - data: mvtec
+  - _self_
+
+# Función de pérdida de reconstrucción: l1 | l2 | ssim | ssim_l1
+loss: l1
+ssim_alpha: 0.85        # peso del SSIM en ssim_l1: alpha*(1-SSIM) + (1-alpha)*L1
+lr: 1e-3
+seed: 42
+
+callbacks:
+  recon_every_n_epochs: 1    # reconstrucciones de validación (16 imágenes)
+  tsne_every_n_epochs: 10    # t-SNE del vector latente (es lo más lento)
+  n_images: 16
+
+hydra:
+  run:
+    dir: outputs/${model.name}-${loss}/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: multirun/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${model.name}-${loss}

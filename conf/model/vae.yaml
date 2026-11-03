@@ -1,0 +1,10 @@
+name: vae
+latent_dim: 128
+kl_weight: 0.005        # beta: peso del término KL (solo aplica al VAE)
+
+net:
+  _target_: src.models.vae.VAE
+  in_channels: 3
+  latent_dim: ${model.latent_dim}
+  channels: [32, 64, 128, 256]
+  image_size: ${data.image_size}

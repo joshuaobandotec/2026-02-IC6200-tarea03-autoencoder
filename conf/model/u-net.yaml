@@ -1,0 +1,13 @@
+name: unet
+latent_dim: 128
+kl_weight: 0.0          # la U-Net no es variacional: sin término KL
+
+net:
+  _target_: src.models.unet.UNetAE
+  in_channels: 3
+  latent_dim: ${model.latent_dim}
+  channels: [32, 64, 128, 256]
+  image_size: ${data.image_size}
+  # Qué skip connections usar, de la más fina (128px) a la más gruesa (16px).
+  # Con todas activas el modelo puede "copiar" también los defectos.
+  use_skips: [true, true, true, true]
