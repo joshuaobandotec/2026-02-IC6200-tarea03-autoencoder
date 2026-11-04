@@ -1,5 +1,5 @@
 name: unet
-latent_dim: 128
+latent_dim: 64
 kl_weight: 0.0          # la U-Net no es variacional: sin término KL
 
 net:
