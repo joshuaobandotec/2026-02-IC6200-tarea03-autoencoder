@@ -10,7 +10,7 @@ defaults:
 
 # Función de pérdida de reconstrucción: l1 | l2 | ssim | ssim_l1
 loss: l1
-ssim_alpha: 0.85        # peso del SSIM en ssim_l1: alpha*(1-SSIM) + (1-alpha)*L1
+ssim_alpha: 0.5        # peso del SSIM en ssim_l1: alpha*(1-SSIM) + (1-alpha)*L1
 lr: 1e-3
 seed: 42
 
