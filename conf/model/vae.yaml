@@ -1,5 +1,5 @@
 name: vae
-latent_dim: 128
+latent_dim: 64
 kl_weight: 0.005        # beta: peso del término KL (solo aplica al VAE)
 
 net:
