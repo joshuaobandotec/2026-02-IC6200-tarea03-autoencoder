@@ -1,13 +1,4 @@
-"""Autoencoder tipo U-Net con skip connections (Persona B).
-
-Igual que el VAE baja 128 -> 8 px, pasa por un vector latente z (cuello de
-botella lineal) y vuelve a subir. La diferencia: en cada nivel del decoder se
-concatenan las activaciones del encoder del mismo tamaño (skip connections).
-
-Las skips mejoran mucho la nitidez, pero también dejan pasar información
-"por fuera" del latente, por lo que el modelo puede reconstruir los defectos.
-Con `use_skips` se pueden apagar niveles para experimentar.
-"""
+"""Autoencoder U-Net con skip connections."""
 import torch
 import torch.nn as nn
 

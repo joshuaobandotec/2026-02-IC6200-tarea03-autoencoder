@@ -1,4 +1,4 @@
-"""Funciones de pérdida de reconstrucción: L1, L2, SSIM y SSIM + L1 (Persona A)."""
+"""Pérdidas de reconstrucción (L1, L2, SSIM, SSIM+L1) y KL del VAE."""
 import torch.nn.functional as F
 from torchmetrics.functional.image import structural_similarity_index_measure as ssim_fn
 

@@ -1,9 +1,4 @@
-"""Variational Autoencoder convolucional (Persona A).
-
-Encoder: 4 bloques conv con stride 2 (128 -> 64 -> 32 -> 16 -> 8)
-Latente: mu y logvar de tamaño latent_dim; z = mu + sigma * eps (reparametrización)
-Decoder: espejo del encoder con ConvTranspose, salida con sigmoid en [0,1]
-"""
+"""Variational autoencoder convolucional."""
 import torch
 import torch.nn as nn
 

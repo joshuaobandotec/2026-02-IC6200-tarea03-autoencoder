@@ -1,12 +1,4 @@
-"""Callbacks que generan todas las gráficas en WandB (Persona B).
-
-1. ReconstructionCallback  -> 16 imágenes de validación: original | reconstrucción
-2. LatentTSNECallback      -> t-SNE del vector latente a lo largo de las épocas
-                              (validación por categoría, prueba bueno vs defecto)
-3. TestEvaluationCallback  -> 16 reconstrucciones de prueba (8 buenas, 8 con
-                              defecto), histogramas de error por subclase,
-                              AUROC por categoría y tabla con el error por imagen
-"""
+"""Callbacks que generan las gráficas de WandB: reconstrucciones, t-SNE del latente y errores/histogramas de prueba."""
 import io
 from pathlib import Path
 

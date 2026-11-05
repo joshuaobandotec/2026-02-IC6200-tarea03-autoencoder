@@ -1,14 +1,4 @@
-"""LightningModule común para los dos autoencoders.
-
-El modelo (VAE o U-Net) se recibe ya construido; aquí solo vive la lógica de
-entrenamiento: pérdida elegida por Hydra, término KL si el modelo es un VAE,
-y métricas comparables entre configuraciones.
-
-Nota para el análisis: `train/loss` y `val/loss` NO son comparables entre
-pérdidas distintas (L1 y 1-SSIM tienen escalas diferentes). Para comparar
-configuraciones usar `val/mse`, `val/l1` y `val/ssim`, que se calculan igual
-en todos los experimentos.
-"""
+"""LightningModule compartido entre VAE y U-Net: recibe el modelo armado y maneja train/val/test, la pérdida de Hydra y el KL del VAE."""
 import lightning as L
 import torch
 import torch.nn.functional as F

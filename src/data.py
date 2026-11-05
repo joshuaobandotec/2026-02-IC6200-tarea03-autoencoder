@@ -1,19 +1,4 @@
-"""DataModule de MVTec AD (Persona A).
-
-Estructura esperada en disco (la del dataset oficial):
-    root/<categoria>/train/good/*.png
-    root/<categoria>/test/<good|tipo_defecto>/*.png
-
-- train / val: solo imágenes buenas (el autoencoder aprende "lo normal").
-- test: imágenes buenas y defectuosas, con su categoría y subclase de defecto.
-
-Cada muestra es un diccionario:
-    {"image": Tensor[3,H,W] en [0,1], "label": 0 bueno / 1 defecto,
-     "category": str, "defect": str}
-
-Las imágenes se cargan y redimensionan UNA sola vez a memoria (son ~1500
-imágenes de 128x128), así cada época es rápida.
-"""
+"""DataModule de MVTec AD: train/val solo con imágenes buenas, test con buenas y defectuosas por subclase."""
 from pathlib import Path
 
 import lightning as L
